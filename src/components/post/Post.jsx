@@ -1,40 +1,38 @@
 import React from 'react';
 import { MoreVert } from '@material-ui/icons';
+import Share from '../share/Share';
+import { Users } from '../../dummyData';
 
 import './post.css';
 
-export default function Post() {
+export default function Post({ post }) {
+  const username = Users.filter((u) => u.id === post.id)[0].username;
+  const profilePic = Users.filter((u) => u.id === post.id)[0].profilePicture;
   return (
     <div className='post'>
       <div className='postWrapper'>
         <div className='postTop'>
           <div className='postTopLeft'>
-            <img
-              className='postProfileImg'
-              src='/assets/person/1.jpeg'
-              alt=''
-            />
-            <span className='postUsername'>Sarah William</span>
-            <span className='postDate'>5 mins ago</span>
+            <img className='postProfileImg' src={profilePic} alt='' />
+            <span className='postUsername'>{username}</span>
+            <span className='postDate'>{post.date}</span>
           </div>
           <div className='postTopRight'>
             <MoreVert />
           </div>
         </div>
         <div className='postCenter'>
-          <span className='postText'>
-            Hello Friendzone, this is my first post
-          </span>
-          <img className='postImg' src='/assets/post/1.jpeg' alt='' />
+          <span className='postText'>{post?.desc}</span>
+          <img className='postImg' src={post.photo} alt='' />
         </div>
         <div className='postBottom'>
           <div className='postBottomLeft'>
             <img className='likeIcon' src='/assets/like.png' alt='' />
             <img className='likeIcon' src='/assets/heart.png' alt='' />
-            <span className='postLikeCounter'>32 people liked it</span>
+            <span className='postLikeCounter'>{post.like} people liked it</span>
           </div>
           <div className='postBottomRight'>
-            <span className='postCommentText'>9 comments</span>
+            <span className='postCommentText'>{post.comment} comments</span>
           </div>
         </div>
       </div>
