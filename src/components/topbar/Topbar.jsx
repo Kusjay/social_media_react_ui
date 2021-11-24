@@ -8,12 +8,15 @@ export const Topbar = () => {
       <div className='topbarLeft'>
         <span className='logo'>Friendzone</span>
       </div>
-      <div className='topbarCenter'></div>
-      <Search />
-      <input
-        placeholder='Saerch for friends, posts, videos'
-        className='searchInput'
-      />
+      <div className='topbarCenter'>
+        <div className='searchbar'>
+          <Search className='searchIcon' />
+          <input
+            placeholder='Saerch for friends, posts, videos'
+            className='searchInput'
+          />
+        </div>
+      </div>
       <div className='topbarRight'>
         <div className='topbarLinks'>
           <span className='topbarLink'>Home</span>
@@ -26,11 +29,11 @@ export const Topbar = () => {
           </div>
           <div className='topbarIconItem'>
             <Chat />
-            <span className='topbarIconBadge'>1</span>
+            <span className='topbarIconBadge'>5</span>
           </div>
           <div className='topbarIconItem'>
             <Notifications />
-            <span className='topbarIconBadge'>1</span>
+            <span className='topbarIconBadge'>6</span>
           </div>
         </div>
         <img src='/assets/person/1.jpeg' alt='' className='topbarImg' />
