@@ -11,6 +11,8 @@ import {
   Event,
   School,
 } from '@material-ui/icons';
+import CloseFriends from '../closeFriends/CloseFriends';
+import { Users } from '../../dummyData';
 
 export default function LeftBar() {
   return (
@@ -57,46 +59,9 @@ export default function LeftBar() {
         <button className='sidebarButton'>Show More</button>
         <hr className='sidebarHr' />
         <ul className='sidebarFriendList'>
-          <li className='sidebarFriend'>
-            <img
-              className='sidebarFriendImg'
-              src='/assets/person/2.jpeg'
-              alt=''
-            />
-            <span className='sidebarFriendName'>John Doe</span>
-          </li>
-          <li className='sidebarFriend'>
-            <img
-              className='sidebarFriendImg'
-              src='/assets/person/3.jpeg'
-              alt=''
-            />
-            <span className='sidebarFriendName'>Jane Smith</span>
-          </li>
-          <li className='sidebarFriend'>
-            <img
-              className='sidebarFriendImg'
-              src='/assets/person/4.jpeg'
-              alt=''
-            />
-            <span className='sidebarFriendName'>Sam Ken</span>
-          </li>
-          <li className='sidebarFriend'>
-            <img
-              className='sidebarFriendImg'
-              src='/assets/person/5.jpeg'
-              alt=''
-            />
-            <span className='sidebarFriendName'>Kev Jay</span>
-          </li>
-          <li className='sidebarFriend'>
-            <img
-              className='sidebarFriendImg'
-              src='/assets/person/6.jpeg'
-              alt=''
-            />
-            <span className='sidebarFriendName'>John Doe</span>
-          </li>
+          {Users.map((u) => (
+            <CloseFriends key={u.id} user={u} />
+          ))}
         </ul>
       </div>
     </div>
