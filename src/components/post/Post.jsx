@@ -6,6 +6,7 @@ import { Users } from '../../dummyData';
 import './post.css';
 
 export default function Post({ post }) {
+  // Working with dummy dynamic data
   const username = Users.filter((u) => u.id === post.id)[0].username;
   const profilePic = Users.filter((u) => u.id === post.id)[0].profilePicture;
   return (
